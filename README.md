@@ -18,20 +18,6 @@ The framework is developed using **Java**, **Rest-Assured**, **TestNG**, **Jacks
 
 ---
 
-## 🚀 Features
-- Automated API testing for **Reqres endpoints** (User creation, fetching, updating, deleting).
-- Payload creation and serialisation using **Jackson ObjectMapper**.
-- Modular design with separation of concerns:
-  - **Endpoints** for constants
-  - **Modules** for payload management
-  - **POJOs** for request/response mapping
-  - **Tests** organised by CRUD, Integration, and Sample flows
-- Assertion layer for reusable validations.
-- Integrated with **Allure Reports** for rich test reporting.
-- Test execution controlled via **TestNG XMLs**.
-
----
-
 ## ⚙️ Tech Stack
 
 - **Java 11+**
@@ -43,6 +29,20 @@ The framework is developed using **Java**, **Rest-Assured**, **TestNG**, **Jacks
 - **Jackson** – Payload serialization & deserialization
 - **Allure Reports** – Reporting framework
 - **Full Folder Structure** – Hybrid Framework
+
+---
+
+## 🚀 Features
+- Automated API testing for **Reqres endpoints** (User creation, fetching, updating, deleting).
+- Payload creation and serialisation using **Jackson ObjectMapper**.
+- Modular design with separation of concerns:
+  - **Endpoints** for constants
+  - **Modules** for payload management
+  - **POJOs** for request/response mapping
+  - **Tests** organised by CRUD, Integration, and Sample flows
+- Assertion layer for reusable validations.
+- Integrated with **Allure Reports** for rich test reporting.
+- Test execution controlled via **TestNG XMLs**.
 
 ---
 
@@ -58,7 +58,7 @@ API_Automation_Framework_Reqres/
 ├── pom.xml                                                         # Maven dependencies & build config
 ├── testng_*.xml                                                    # TestNG suite files
 ├── .gitignore
-|                                        
+│                                       
 ├── src/
 │   ├── main/
 │   │   └── java/
@@ -126,6 +126,7 @@ mvn clean test -DsuiteXmlFile=testng_Integration.xml
 - `testng_partialUpdate.xml`
 - `testng_registerUser.xml`
 - `testng_sample.xml`
+
 ---
 
 ## 📊 Reporting
@@ -139,6 +140,7 @@ allure serve allure-results
 This will launch an interactive report in your browser.
 
 ---
+
 ## ✅ Example Payload with Jackson
 
 ```java
@@ -146,7 +148,9 @@ Register register = new Register();
 register.setEmail("eve.holt@reqres.in");
 register.setPassword("pistol");
 ```
+
 ---
+
 ## 📌 Author
 👤 Avinash Sinha
 
