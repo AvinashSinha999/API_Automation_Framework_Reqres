@@ -3,6 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="E2E Flow Test Suite">
         <classes>
+
             <class name="com.avinashsinha.tests.integration.TestE2EFlow"/>
         </classes>
     </test>
