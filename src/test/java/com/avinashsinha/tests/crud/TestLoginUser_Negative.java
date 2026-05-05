@@ -25,5 +25,6 @@ public class TestLoginUser_Negative extends BaseTest {
         validatableResponse = response.then().log().all().statusCode(400);
 
         LoginResponse loginResponse = payloadManager.loginResponseJava(response.asString());
+
     }
 }
