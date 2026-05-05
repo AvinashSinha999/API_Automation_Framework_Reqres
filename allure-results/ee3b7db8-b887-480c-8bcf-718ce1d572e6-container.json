@@ -1,0 +1,1 @@
+{"uuid":"ee3b7db8-b887-480c-8bcf-718ce1d572e6","name":"Create User Test Suite","children":["3ede68ec-4d78-4ea5-b720-6bb3158fc2ce"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1777911601566,"stop":1777911602095}],"afters":[],"start":1777911601549,"stop":1777911604175}
