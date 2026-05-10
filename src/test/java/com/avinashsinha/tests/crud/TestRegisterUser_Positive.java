@@ -28,6 +28,7 @@ public class TestRegisterUser_Positive extends BaseTest {
 
         assertActions.verifyIdNotNull(registerResponse.getId());
         assertActions.verifyTokenNotNull(registerResponse.getToken());
+
     }
 
 }
