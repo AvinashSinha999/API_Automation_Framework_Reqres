@@ -23,5 +23,6 @@ public class TestUserDeletion extends BaseTest {
                 .when().delete(APIConstants.USERS_ENDPOINT);
 
         validatableResponse = response.then().log().all().statusCode(204);
+
     }
 }
