@@ -1,90 +1,109 @@
-# API Automation Framework - Reqres
+# 🚀 API Automation Framework | Reqres
 
-![Java](https://img.shields.io/badge/Java-11%2B-blue)
-![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-IDE-000000?logo=intellijidea&logoColor=white)
+> A modular **API Automation Framework** built using **Java**, **Rest-Assured**, **TestNG**, **Maven**, **Jackson**, **AssertJ**, and **Allure Reports** to automate testing of the **Reqres** APIs.
+
+<p align="center">
+
+![Java](https://img.shields.io/badge/Java-11+-blue?logo=openjdk)
 ![Maven](https://img.shields.io/badge/Maven-Build%20Tool-C71A36?logo=apachemaven&logoColor=white)
-![TestNG](https://img.shields.io/badge/TestNG-Framework-brightgreen)
 ![RestAssured](https://img.shields.io/badge/RestAssured-API--Testing-yellowgreen)
-![Jackson](https://img.shields.io/badge/Jackson-Payload%20Mapper-lightgrey)
+![TestNG](https://img.shields.io/badge/TestNG-Framework-brightgreen)
+![AssertJ](https://img.shields.io/badge/AssertJ-Assertions-orange)
+![Jackson](https://img.shields.io/badge/Jackson-ObjectMapper-lightgrey)
 ![Allure](https://img.shields.io/badge/Allure-Reports-ff69b4)
+![Log4j2](https://img.shields.io/badge/Log4j2-Logging-yellow)
+
+</p>
 
 ---
 
-## 🗂️ Overview
+# 🗂️ Overview
 
-This project is an **API Automation Framework** built to test the [Reqres](https://reqres.in/) APIs.  
+This repository contains a modular **API Automation Framework** for testing the **Reqres** APIs.
 
-The framework is developed using **Java**, **Rest-Assured**, **TestNG**, **Jackson** for payload management, **Allure** for reporting, and **IntelliJ IDEA** as the IDE.
+Built with **Java**, **Rest-Assured**, **TestNG**, and **Maven**, the framework demonstrates industry-standard API automation practices including **Jackson ObjectMapper-based serialization**, reusable assertion utilities, authentication scenarios, CRUD operations, end-to-end workflow testing, logging, and interactive Allure reporting.
 
----
-
-## ⚙️ Tech Stack
-
-- **Java 11+**
-- **IntelliJ IDEA** – IDE for development
-- **Maven** – Build & dependency management
-- **Rest-Assured** – HTTP client for API automation
-- **TestNG** – Testing framework
-- **AssertJ** – Advanced assertions
-- **Jackson** – Payload serialization & deserialization
-- **Allure Reports** – Reporting framework
-- **Full Folder Structure** – Hybrid Framework
+The framework uses **Jackson** for request and response serialization/deserialization, providing a clean, scalable, and type-safe approach to API automation using POJOs.
 
 ---
 
-## 🚀 Features
-- Automated API testing for **Reqres endpoints** (User creation, fetching, updating, deleting).
-- Payload creation and serialisation using **Jackson ObjectMapper**.
-- Modular design with separation of concerns:
-  - **Endpoints** for constants
-  - **Modules** for payload management
-  - **POJOs** for request/response mapping
-  - **Tests** organised by CRUD, Integration, and Sample flows
-- Assertion layer for reusable validations.
-- Integrated with **Allure Reports** for rich test reporting.
-- Test execution controlled via **TestNG XMLs**.
+# ✨ Features
+
+- ✅ Complete CRUD API Automation
+- ✅ User Registration & Login Validation
+- ✅ Positive & Negative API Testing
+- ✅ Jackson ObjectMapper Serialization
+- ✅ POJO-Based Request & Response Mapping
+- ✅ Modular Framework Design
+- ✅ Centralized Assertion Utilities
+- ✅ End-to-End Integration Testing
+- ✅ TestNG Suite Execution
+- ✅ Log4j2 Logging
+- ✅ Allure Reporting
 
 ---
 
-## 🏗️ Project Structure
+# 🛠️ Tech Stack
 
-```bash
+| Technology | Usage |
+|------------|-------|
+| Java 11+ | Programming Language |
+| Maven | Dependency & Build Management |
+| Rest-Assured | API Automation |
+| TestNG | Test Framework |
+| AssertJ | Fluent Assertions |
+| Jackson | POJO Serialization & Deserialization |
+| Log4j2 | Logging |
+| Allure Reports | Test Reporting |
+| IntelliJ IDEA | Development IDE |
+
+---
+
+# 🏗️ Project Structure
+
+```text
 API_Automation_Framework_Reqres/
 │
-├── .idea/                                                          # IntelliJ config
-├── .mvn/                                                           # Maven wrapper files
-├── allure-results/                                                 # Allure results (auto-generated)
+├── .idea/                                                    # IntelliJ config
+├── .mvn/                                                     # Maven wrapper files
+├── allure-report/
+├── allure-results/
 │
-├── pom.xml                                                         # Maven dependencies & build config
-├── testng_*.xml                                                    # TestNG suite files
+├── pom.xml                                                   # Project dependencies & build config
 ├── .gitignore
-│                                       
+├── testng_*.xml                                              # TestNG suite files
+│
 ├── src/
 │   ├── main/
-│   │   └── java/
-│   │       ├── com.avinashsinha.endpoints/
-│   │       │   └── APIConstants.java                               # API Endpoints & Constants
-│   │       │
-│   │       ├── com.avinashsinha.modules/
-│   │       │   └── PayloadManager.java                             # Payload Builders
-│   │       │
-│   │       └── com.avinashsinha.pojos/                             # Request/Response POJOs
-│   │       	├── DataResponse.java
-│   │       	├── DetailResponse.java
-│   │       	├── Login.java
-│   │       	├── LoginResponse.java
-│   │       	├── SupportResponse.java
-│   │       	├── UpdateResponse.java
-│   │       	├── UserResponse.java
-│   │       	└── Users.java
+│   │   ├── java/
+│   │   │   ├── com.avinashsinha.endpoints/
+│   │   │   │   └── APIConstants.java                         # API endpoint constants
+│   │   │   │
+│   │   │   ├── com.avinashsinha.modules/
+│   │   │   │   └── PayloadManager.java                       # Payload manager
+│   │   │   │
+│   │   │   └── com.avinashsinha.pojos/                       # Request/Response POJOs
+│   │   │       ├── DataResponse.java
+│   │   │       ├── DetailsResponse.java
+│   │   │       ├── Login.java
+│   │   │       ├── LoginResponse.java
+│   │   │       ├── Register.java
+│   │   │       ├── RegisterResponse.java
+│   │   │       ├── SupportResponse.java
+│   │   │       ├── UpdateResponse.java
+│   │   │       ├── UserResponse.java
+│   │   │       └── Users.java
+│   │   │
+│   │   └── resources/
+│   │       └── log4j2.xml                                    # Logging configuration
 │   │
 │   └── test/
 │       └── java/
 │           ├── com.avinashsinha.asserts/
-│           │   └── AssertActions.java                              # Custom Assertions
+│           │   └── AssertActions.java                        # Assertion utilities
 │           │
 │           ├── com.avinashsinha.base/
-│           │   └── BaseTest.java                                   # Base Test Setup
+│           │   └── BaseTest.java                             # Base test configuration
 │           │
 │           └── com.avinashsinha.tests/
 │               ├── crud/                                           # CRUD Test Cases
@@ -107,51 +126,103 @@ API_Automation_Framework_Reqres/
 │
 └── README.md
 ```
+
 ---
 
-## ▶️ Running Tests
+# 📦 Framework Components
 
-### Integration Test (Create User, Details, Update and Delete User)
+| Component | Description |
+|------------|-------------|
+| **APIConstants** | Stores all API endpoint constants |
+| **PayloadManager** | Creates reusable request payloads using Jackson |
+| **POJOs** | Request and response serialization models |
+| **BaseTest** | Provides common test setup and configuration |
+| **AssertActions** | Centralized assertion utilities |
+| **CRUD Tests** | User lifecycle API test scenarios |
+| **Integration Tests** | End-to-end workflow validation |
+| **Resources** | Log4j2 configuration files |
+
+---
+
+# ✅ Test Coverage
+
+| Endpoint | Test Scenario |
+|-----------|---------------|
+| **POST** `/api/register` | Register User (Positive) |
+| **POST** `/api/register` | Register User (Negative) |
+| **POST** `/api/login` | Login User (Positive) |
+| **POST** `/api/login` | Login User (Negative) |
+| **POST** `/api/users` | Create User |
+| **GET** `/api/users` | Retrieve Users |
+| **GET** `/api/users/{id}` | Retrieve User by ID |
+| **PUT** `/api/users/{id}` | Full Update User |
+| **PATCH** `/api/users/{id}` | Partial Update User |
+| **DELETE** `/api/users/{id}` | Delete User |
+| Workflow | End-to-End Integration Testing |
+
+---
+
+# ▶️ Running Tests
+
+Execute any TestNG suite using Maven.
+
+### Example
+
 ```bash
-mvn clean test -DsuiteXmlFile=testng_Integration.xml
+mvn clean test -DsuiteXmlFile=testng_integration.xml
 ```
 
-#### Available TestNG XMLs
+### Available Test Suites
 
-- `testng_createUser.xml`
-- `testng_deleteUser.xml`
-- `testng_detailById.xml`
-- `testng_fullUpdate.xml`
-- `testng_loginUser.xml`
-- `testng_partialUpdate.xml`
-- `testng_registerUser.xml`
-- `testng_sample.xml`
+| Suite | XML File |
+|--------|----------|
+| Create User | `testng_createUser.xml` |
+| Delete User | `testng_deleteUser.xml` |
+| User Details | `testng_detailById.xml` |
+| Full Update | `testng_fullUpdate.xml` |
+| Partial Update | `testng_partialUpdate.xml` |
+| Register User | `testng_registerUser.xml` |
+| Login User | `testng_loginUser.xml` |
+| Sample Tests | `testng_sample.xml` |
+| End-to-End Flow | `testng_integration.xml` |
 
 ---
 
-## 📊 Reporting
-### Generate Allure Report
+# 📊 Allure Reports
+
+Generate the report using:
 
 ```bash
 allure serve allure-results
 ```
-  <img src="https://github.com/user-attachments/assets/714983f1-f2e6-451a-8978-eba361e77f0d" alt="Reqres Allure Report" width="1100">
 
-This will launch an interactive report in your browser.
+<p align="center">
+<img width="1100" src="https://github.com/user-attachments/assets/714983f1-f2e6-451a-8978-eba361e77f0d" alt="Reqres Allure Report">
+</p>
+
+The command launches an interactive Allure dashboard in your default browser.
 
 ---
 
-## ✅ Example Payload with Jackson
+# 📝 Sample Jackson Payload
 
 ```java
 Register register = new Register();
+
 register.setEmail("eve.holt@reqres.in");
 register.setPassword("pistol");
 ```
 
 ---
 
-## 📌 Author
-👤 Avinash Sinha
+# 👨‍💻 Author
+
+**Avinash Sinha**
+
+If you found this repository helpful, consider giving it a ⭐ on GitHub.
 
 ---
+
+# 📄 License
+
+This project is intended for **educational** and **learning purposes**.
