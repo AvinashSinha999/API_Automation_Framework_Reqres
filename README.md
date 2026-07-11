@@ -19,27 +19,27 @@
 
 # 🗂️ Overview
 
-This repository contains a modular **API Automation Framework** for testing the **Reqres** APIs.
+This repository contains a modular **API Automation Framework** developed for testing the **Reqres** APIs using **Java**, **Rest-Assured**, **TestNG**, and **Maven**.
 
-Built with **Java**, **Rest-Assured**, **TestNG**, and **Maven**, the framework demonstrates industry-standard API automation practices including **Jackson ObjectMapper-based serialization**, reusable assertion utilities, authentication scenarios, CRUD operations, end-to-end workflow testing, logging, and interactive Allure reporting.
+The framework demonstrates industry-standard API automation practices including **user registration**, **authentication**, **CRUD operations**, **positive & negative testing**, **POJO-based request/response mapping**, **centralized assertions**, **end-to-end workflow testing**, **logging**, and **interactive Allure reporting**.
 
-The framework uses **Jackson** for request and response serialization/deserialization, providing a clean, scalable, and type-safe approach to API automation using POJOs.
+Using **Jackson ObjectMapper** for request and response serialization/deserialization, the framework provides a clean, scalable, and type-safe approach to API automation while promoting **clean architecture**, **code reusability**, and **maintainable test design**.
 
 ---
 
-# ✨ Features
+# ✨ Key Features
 
 - ✅ Complete CRUD API Automation
 - ✅ User Registration & Login Validation
 - ✅ Positive & Negative API Testing
 - ✅ Jackson ObjectMapper Serialization
 - ✅ POJO-Based Request & Response Mapping
-- ✅ Modular Framework Design
+- ✅ Modular Framework Architecture
 - ✅ Centralized Assertion Utilities
-- ✅ End-to-End Integration Testing
+- ✅ End-to-End Workflow Testing
 - ✅ TestNG Suite Execution
 - ✅ Log4j2 Logging
-- ✅ Allure Reporting
+- ✅ Rich Allure Reporting
 
 ---
 
@@ -64,12 +64,14 @@ The framework uses **Jackson** for request and response serialization/deserializ
 ```text
 API_Automation_Framework_Reqres/
 │
-├── .idea/                                                    # IntelliJ config
+├── .idea/                                                    # IntelliJ configuration
 ├── .mvn/                                                     # Maven wrapper files
-├── allure-report/
-├── allure-results/
+├── allure-report/                                            # Generated Allure report
+├── allure-results/                                           # Allure execution results
+├── logs/
+│   └── test.log                                              # Test execution logs
 │
-├── pom.xml                                                   # Project dependencies & build config
+├── pom.xml                                                   # Maven dependencies & build configuration
 ├── .gitignore
 ├── testng_*.xml                                              # TestNG suite files
 │
@@ -80,9 +82,9 @@ API_Automation_Framework_Reqres/
 │   │   │   │   └── APIConstants.java                         # API endpoint constants
 │   │   │   │
 │   │   │   ├── com.avinashsinha.modules/
-│   │   │   │   └── PayloadManager.java                       # Payload manager
+│   │   │   │   └── PayloadManager.java                       # POJO payload manager
 │   │   │   │
-│   │   │   └── com.avinashsinha.pojos/                       # Request/Response POJOs
+│   │   │   └── com.avinashsinha.pojos/                       # Request & response POJOs
 │   │   │       ├── DataResponse.java
 │   │   │       ├── DetailsResponse.java
 │   │   │       ├── Login.java
@@ -106,23 +108,23 @@ API_Automation_Framework_Reqres/
 │           │   └── BaseTest.java                             # Base test configuration
 │           │
 │           └── com.avinashsinha.tests/
-│               ├── crud/                                           # CRUD Test Cases
-│           	│   ├── TestCreateUser.java
-│           	│   ├── TestLoginUser_Negative.java
-│           	│   ├── TestLoginUser_Positive.java
-│           	│   ├── TestRegisterUser_Negative.java
-│           	│   ├── TestRegisterUser_Positive.java
-│           	│   ├── TestUserDeletion.java
-│           	│   ├── TestUserDetails.java
-│           	│   ├── TestUserDetailsById.java
-│           	│   ├── TestUserFullUpdate.java
-│           	│   └── TestUserPartialUpdate.java
-│           	│
-│           	├── integration/                                    # Integration Test Cases
-│           	│   └── TestE2EFlow.java
-│           	│
-│           	└── sample/                                         # Sample Tests
-│               	└── TestIntegrationSample.java
+│               ├── crud/                                     # CRUD test cases
+│               │   ├── TestCreateUser.java
+│               │   ├── TestLoginUser_Negative.java
+│               │   ├── TestLoginUser_Positive.java
+│               │   ├── TestRegisterUser_Negative.java
+│               │   ├── TestRegisterUser_Positive.java
+│               │   ├── TestUserDeletion.java
+│               │   ├── TestUserDetails.java
+│               │   ├── TestUserDetailsById.java
+│               │   ├── TestUserFullUpdate.java
+│               │   └── TestUserPartialUpdate.java
+│               │
+│               ├── integration/                              # End-to-end workflow tests
+│               │   └── TestE2EFlow.java
+│               │
+│               └── sample/                                   # Sample test implementations
+│                   └── TestIntegrationSample.java
 │
 └── README.md
 ```
@@ -134,17 +136,17 @@ API_Automation_Framework_Reqres/
 | Component | Description |
 |------------|-------------|
 | **APIConstants** | Stores all API endpoint constants |
-| **PayloadManager** | Creates reusable request payloads using Jackson |
-| **POJOs** | Request and response serialization models |
-| **BaseTest** | Provides common test setup and configuration |
-| **AssertActions** | Centralized assertion utilities |
-| **CRUD Tests** | User lifecycle API test scenarios |
-| **Integration Tests** | End-to-end workflow validation |
-| **Resources** | Log4j2 configuration files |
+| **PayloadManager** | Creates reusable request payloads using Jackson ObjectMapper |
+| **POJOs** | Request and response models for serialization/deserialization |
+| **BaseTest** | Provides common test initialization and configuration |
+| **AssertActions** | Contains centralized assertion utilities |
+| **CRUD Tests** | Implements user lifecycle API test scenarios |
+| **Integration Tests** | Validates complete end-to-end workflows |
+| **Resources** | Stores Log4j2 configuration files |
 
 ---
 
-# ✅ Test Coverage
+# 🌐 API Coverage
 
 | Endpoint | Test Scenario |
 |-----------|---------------|
@@ -153,7 +155,7 @@ API_Automation_Framework_Reqres/
 | **POST** `/api/login` | Login User (Positive) |
 | **POST** `/api/login` | Login User (Negative) |
 | **POST** `/api/users` | Create User |
-| **GET** `/api/users` | Retrieve Users |
+| **GET** `/api/users` | Retrieve All Users |
 | **GET** `/api/users/{id}` | Retrieve User by ID |
 | **PUT** `/api/users/{id}` | Full Update User |
 | **PATCH** `/api/users/{id}` | Partial Update User |
@@ -190,7 +192,7 @@ mvn clean test -DsuiteXmlFile=testng_integration.xml
 
 # 📊 Allure Reports
 
-Generate the report using:
+Generate and launch the Allure report using:
 
 ```bash
 allure serve allure-results
@@ -200,11 +202,11 @@ allure serve allure-results
 <img width="1100" src="https://github.com/user-attachments/assets/714983f1-f2e6-451a-8978-eba361e77f0d" alt="Reqres Allure Report">
 </p>
 
-The command launches an interactive Allure dashboard in your default browser.
+The command generates and opens an interactive **Allure dashboard** displaying execution results, logs, and test statistics.
 
 ---
 
-# 📝 Sample Jackson Payload
+# 📝 Sample Jackson ObjectMapper Payload
 
 ```java
 Register register = new Register();
@@ -215,14 +217,30 @@ register.setPassword("pistol");
 
 ---
 
+# ⭐ Repository Highlights
+
+- ✔ Modular API Automation Framework
+- ✔ Industry-Standard Project Structure
+- ✔ User Registration & Login Validation
+- ✔ Positive & Negative API Testing
+- ✔ CRUD Operations
+- ✔ Jackson ObjectMapper Serialization
+- ✔ POJO-Based Request & Response Mapping
+- ✔ Centralized Assertions
+- ✔ End-to-End Integration Testing
+- ✔ Log4j2 Logging
+- ✔ Rich Allure Reporting
+
+---
+
 # 👨‍💻 Author
 
 **Avinash Sinha**
 
-If you found this repository helpful, consider giving it a ⭐ on GitHub.
+If you found this repository useful, consider giving it a ⭐.
 
 ---
 
 # 📄 License
 
-This project is intended for **educational** and **learning purposes**.
+This repository is intended for **educational** and **learning purposes**.
